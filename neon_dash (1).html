@@ -1,0 +1,1561 @@
+<html lang="en" style="--player-color-1: #6A5ACD; --player-color-2: #FF00FF; --level-hover-c1: var(--neon-color-main); --level-hover-c2: var(--neon-color-accent);"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImYwZjI0YjNjZGNmMjUwNzA5NWVlMDNmZWQxYWExYzRjYzFjZjZlY2MiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMjE3NzM3NzU4NzE3MjIyMTk3MyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzM4ZDQwNTQ1YTI3NmY2MTNfaW5kZXguaHRtbC01MjkifSwiZXhwIjoxNzY0MjE4MDA2LCJpYXQiOjE3NjQyMTQ0MDYsImFsZyI6IlJTMjU2In0.fiNftZ2hTZbtsYTHtTM0Y5gYuzOzLeafdTvuVRVYzuY9K2lOCiqxuJa8EbD4qH_C3dmziGxvtXXIMvEHcSNmx8Pp1sOlq1beIagYZzTtMvwpVnxbiw0etIyGcP4HDB96khMmN6umL2XUcp2gjpi8Viirq9WlXI05w6Nwd_3eDP0kLeKqdD0Q2zSPI1Kp8e5n6zSGTIDt4yE3VfwGEWkFI0Y6Kf7jak8f3VWmQcoOEzeagdS46NYaz4qG92IkBG715D4JRse17rIXwc8xTyKjVlC3QSHnZHcwoMeXa8wMJhOG9udsfXhsR4mI_B-0NCgvye2zOgc7Z8A15PF8TiaLLQ","c_38d40545a276f613_index.html-529")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-2.5-flash-image-preview","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Dash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-color-main: #3C00A8; /* Deep Violet/Blue */
+            --neon-color-accent: #00FFC0; /* Teal/Aqua */
+            --player-color-1: #FF4500;
+            --player-color-2: #FFD700;
+            /* Default hover gradient for level buttons */
+            --level-hover-c1: #3C00A8; 
+            --level-hover-c2: #00FFC0;
+        }
+
+        body {
+            font-family: 'Audiowide', cursive;
+            background-color: #0d0515;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 800px;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(30, 0, 60, 0.9), rgba(15, 0, 30, 0.9));
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 0 50px rgba(138, 43, 226, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #game-canvas {
+            border-radius: 0.75rem;
+            box-shadow: 0 0 15px var(--neon-color-accent), 0 0 30px var(--neon-color-main);
+            width: 100%;
+            /* Maintain aspect ratio: Canvas is 600x300, so 50% height */
+            aspect-ratio: 2 / 1; 
+            outline: none; 
+        }
+
+        .neon-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #fff;
+            text-shadow: 
+                0 0 7px #fff, 
+                0 0 10px #fff, 
+                0 0 21px var(--neon-color-accent), 
+                0 0 42px var(--neon-color-main), 
+                0 0 82px var(--neon-color-main);
+            letter-spacing: 2px;
+        }
+
+        .neon-button {
+            background-color: var(--neon-color-main);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            margin: 0.5rem;
+            border-radius: 0.5rem;
+            border: 2px solid var(--neon-color-accent);
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 0 5px var(--neon-color-accent), 0 0 10px var(--neon-color-main);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .neon-button:hover {
+            background-color: var(--neon-color-accent);
+            color: var(--neon-color-main);
+            box-shadow: 0 0 10px var(--neon-color-main), 0 0 20px var(--neon-color-accent);
+            transform: scale(1.05);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Customization styles */
+        .color-preview {
+            width: 60px;
+            height: 60px;
+            border-radius: 0.5rem;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 0.5rem;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        .color-swatch {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.1s, border-color 0.1s;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        
+        .color-swatch:hover {
+            transform: scale(1.2);
+            border-color: #fff;
+        }
+        
+        /* Progress Bar styles (retained) */
+        #progress-container {
+            width: 100%;
+            height: 8px;
+            background-color: #2a0a4c;
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            transition: background-color 0.5s ease;
+            border-radius: 4px;
+        }
+        
+        #progress-bar.completed {
+             background-color: #38a169 !important; /* Tailwind green-600 */
+        }
+
+        /* Main Menu Icon Animation (retained) */
+        @keyframes cube-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        #menu-icon-cube {
+            animation: cube-spin 8s linear infinite;
+        }
+
+        /* --- Level Select Menu Styles --- */
+        #level-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .level-card {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--neon-color-main);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--level-hover-c2);
+            /* Use the dynamic CSS variables for hover effect */
+            background: linear-gradient(45deg, var(--level-hover-c1)10%, var(--level-hover-c2) 90%);
+            box-shadow: 0 0 20px var(--level-hover-c2);
+            color: #0d0515; /* Dark text on bright background */
+        }
+        
+        .level-card-name {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.hidden{display:none}.w-full{width:100%}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-4{gap:1rem}.rounded{border-radius:0.25rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border-4{border-width:4px}.border-green-500{--tw-border-opacity:1;border-color:rgb(34 197 94 / var(--tw-border-opacity, 1))}.border-green-800{--tw-border-opacity:1;border-color:rgb(22 101 52 / var(--tw-border-opacity, 1))}.border-red-800{--tw-border-opacity:1;border-color:rgb(153 27 27 / var(--tw-border-opacity, 1))}.bg-green-600{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.bg-green-700{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.bg-red-600{--tw-bg-opacity:1;background-color:rgb(220 38 38 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.tracking-widest{letter-spacing:0.1em}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-70{opacity:0.7}.opacity-80{opacity:0.8}.hover\:bg-green-500:hover{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.hover\:bg-green-600:hover{--tw-bg-opacity:1;background-color:rgb(22 163 74 / var(--tw-bg-opacity, 1))}.hover\:bg-red-500:hover{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:flex-row{flex-direction:row}}</style></head>
+<body>
+
+<div class="container">
+    <h1 class="neon-title">NEON DASH</h1>
+
+    <!-- Game States Container -->
+    <div id="game-states-container" class="w-full flex flex-col items-center">
+        
+        <!-- Main Menu -->
+        <div id="main-menu" class="flex flex-col items-center w-full">
+
+            <!-- Game Icon/Visual Element (Uses Custom Colors) -->
+            <div id="menu-icon" class="mb-6 p-4 rounded-xl border-4" style="border-color: rgb(255, 0, 255); box-shadow: rgb(255, 0, 255) 0px 0px 15px, rgb(106, 90, 205) 0px 0px 10px inset;">
+                 <div id="menu-icon-cube" style="width: 50px; height: 50px; background: linear-gradient(45deg, var(--player-color-1), var(--player-color-2)); transform: rotate(45deg);"></div>
+            </div>
+
+            <!-- High Score Display -->
+            <div class="text-xl mb-8 p-2 rounded tracking-widest" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); text-shadow: 0 0 5px var(--neon-color-accent);">
+                HIGH SCORE: <span id="high-score">283</span>
+            </div>
+            
+            <button id="play-button" class="neon-button">Start Dash</button>
+            <button id="customize-button" class="neon-button">Customize Cube</button>
+            <button id="download-button" class="neon-button bg-green-700 border-green-500 hover:bg-green-600">Download Game</button>
+            <div class="text-xs mt-6 opacity-70">
+                Press SPACE or Click/Tap the canvas to Jump.
+            </div>
+        </div>
+
+        <!-- Level Selection Menu (NEW) -->
+        <div id="level-select-menu" class="w-full p-6 hidden">
+            <h2 class="text-3xl text-white mb-8 text-center" style="text-shadow: 0 0 10px var(--neon-color-accent);">SELECT LEVEL</h2>
+            
+            <div id="level-list"><div class="level-card" data-level-id="1"><div class="level-card-name">Level 1: Sunset Drift</div><div class="text-xs opacity-70">Colors: #FF8C00 / #FF4500</div></div><div class="level-card" data-level-id="2"><div class="level-card-name">Level 2: Teal Peace</div><div class="text-xs opacity-70">Colors: #00CED1 / #7FFFD4</div></div><div class="level-card" data-level-id="3"><div class="level-card-name">Level 3: Vaporwave Dream</div><div class="text-xs opacity-70">Colors: #FF00FF / #00FFFF</div></div><div class="level-card" data-level-id="4"><div class="level-card-name">Level 4: Future Line</div><div class="text-xs opacity-70">Colors: #8A2BE2 / #00BFFF</div></div><div class="level-card" data-level-id="5"><div class="level-card-name">Level 5: Berry Circuit</div><div class="text-xs opacity-70">Colors: #FFA500 / #FF1493</div></div><div class="level-card" data-level-id="6"><div class="level-card-name">Level 6: Synth Wave</div><div class="text-xs opacity-70">Colors: #00FFFF / #0000CD</div></div></div>
+            
+            <button id="level-select-back-button" class="neon-button mt-8 w-full">Back to Main Menu</button>
+        </div>
+
+        <!-- Customization Menu (retained) -->
+        <div id="customize-menu" class="w-full customization-controls p-6 hidden">
+            <h2 class="text-2xl text-white mb-4">Customize Your Cube</h2>
+
+            <!-- Player Cube Preview -->
+            <div id="player-preview" class="color-preview mb-4" style="--player-color-1: #FF4500; --player-color-2: #FFD700; background: linear-gradient(45deg, rgb(106, 90, 205), rgb(255, 0, 255));"></div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                <!-- Color 1 Selector -->
+                <div class="flex flex-col items-center">
+                    <label class="mb-2 text-sm">Gradient Start Color:</label>
+                    <div id="color1-palette" class="color-palette"><div class="color-swatch" data-color="#FF00FF" style="background-color: rgb(255, 0, 255);"></div><div class="color-swatch" data-color="#00FFFF" style="background-color: rgb(0, 255, 255);"></div><div class="color-swatch" data-color="#FFFF00" style="background-color: rgb(255, 255, 0);"></div><div class="color-swatch" data-color="#FF0000" style="background-color: rgb(255, 0, 0);"></div><div class="color-swatch" data-color="#00FF00" style="background-color: rgb(0, 255, 0);"></div><div class="color-swatch" data-color="#0000FF" style="background-color: rgb(0, 0, 255);"></div><div class="color-swatch" data-color="#FF69B4" style="background-color: rgb(255, 105, 180);"></div><div class="color-swatch" data-color="#ADFF2F" style="background-color: rgb(173, 255, 47);"></div><div class="color-swatch" data-color="#8A2BE2" style="background-color: rgb(138, 43, 226);"></div><div class="color-swatch" data-color="#00CED1" style="background-color: rgb(0, 206, 209);"></div><div class="color-swatch" data-color="#FFD700" style="background-color: rgb(255, 215, 0);"></div><div class="color-swatch" data-color="#3CB371" style="background-color: rgb(60, 179, 113);"></div><div class="color-swatch" data-color="#FFA500" style="background-color: rgb(255, 165, 0);"></div><div class="color-swatch" data-color="#FF4500" style="background-color: rgb(255, 69, 0);"></div><div class="color-swatch" data-color="#DA70D6" style="background-color: rgb(218, 112, 214);"></div><div class="color-swatch" data-color="#BA55D3" style="background-color: rgb(186, 85, 211);"></div><div class="color-swatch" data-color="#7FFFD4" style="background-color: rgb(127, 255, 212);"></div><div class="color-swatch" data-color="#6A5ACD" style="background-color: rgb(106, 90, 205);"></div></div>
+                </div>
+                
+                <!-- Color 2 Selector -->
+                <div class="flex flex-col items-center">
+                    <label class="mb-2 text-sm">Gradient End Color:</label>
+                    <div id="color2-palette" class="color-palette"><div class="color-swatch" data-color="#FF00FF" style="background-color: rgb(255, 0, 255);"></div><div class="color-swatch" data-color="#00FFFF" style="background-color: rgb(0, 255, 255);"></div><div class="color-swatch" data-color="#FFFF00" style="background-color: rgb(255, 255, 0);"></div><div class="color-swatch" data-color="#FF0000" style="background-color: rgb(255, 0, 0);"></div><div class="color-swatch" data-color="#00FF00" style="background-color: rgb(0, 255, 0);"></div><div class="color-swatch" data-color="#0000FF" style="background-color: rgb(0, 0, 255);"></div><div class="color-swatch" data-color="#FF69B4" style="background-color: rgb(255, 105, 180);"></div><div class="color-swatch" data-color="#ADFF2F" style="background-color: rgb(173, 255, 47);"></div><div class="color-swatch" data-color="#8A2BE2" style="background-color: rgb(138, 43, 226);"></div><div class="color-swatch" data-color="#00CED1" style="background-color: rgb(0, 206, 209);"></div><div class="color-swatch" data-color="#FFD700" style="background-color: rgb(255, 215, 0);"></div><div class="color-swatch" data-color="#3CB371" style="background-color: rgb(60, 179, 113);"></div><div class="color-swatch" data-color="#FFA500" style="background-color: rgb(255, 165, 0);"></div><div class="color-swatch" data-color="#FF4500" style="background-color: rgb(255, 69, 0);"></div><div class="color-swatch" data-color="#DA70D6" style="background-color: rgb(218, 112, 214);"></div><div class="color-swatch" data-color="#BA55D3" style="background-color: rgb(186, 85, 211);"></div><div class="color-swatch" data-color="#7FFFD4" style="background-color: rgb(127, 255, 212);"></div><div class="color-swatch" data-color="#6A5ACD" style="background-color: rgb(106, 90, 205);"></div></div>
+                </div>
+            </div>
+
+            <button id="save-customization-button" class="neon-button mt-4">Save &amp; Back to Menu</button>
+        </div>
+
+        <!-- Game View -->
+        <div id="game-view" class="w-full hidden">
+            <canvas id="game-canvas" width="600" height="300" tabindex="0"></canvas>
+            
+            <!-- Game Over Message (retained) -->
+            <div id="game-over-message" class="text-center mt-4 p-4 rounded-lg hidden" style="background: rgba(255, 0, 0, 0.2); border: 2px solid red; box-shadow: 0 0 10px red;">
+                <p class="text-xl font-bold">GAME OVER</p>
+                <p>You crashed! Score: <span id="final-score">283</span></p>
+                <button id="retry-button-fail" class="neon-button mt-3 bg-red-600 border-red-800 hover:bg-red-500">Retry Level</button>
+                <button id="menu-button-fail" class="neon-button mt-3">Back to Menu</button>
+            </div>
+
+            <!-- Level Completed Message (NEW) -->
+            <div id="level-complete-message" class="text-center mt-4 p-4 rounded-lg hidden" style="background: rgba(0, 255, 0, 0.2); border: 2px solid green; box-shadow: 0 0 10px green;">
+                <p class="text-xl font-bold" style="text-shadow: 0 0 5px lime;">LEVEL COMPLETED!</p>
+                <p>Total Score: <span id="complete-score">120</span></p>
+                <button id="retry-button-complete" class="neon-button mt-3 bg-green-600 border-green-800 hover:bg-green-500">Retry Level</button>
+                <button id="menu-button-complete" class="neon-button mt-3">Back to Main Menu</button>
+            </div>
+            
+            <div id="progress-container">
+                <div id="progress-bar" class="" style="width: 78.3333%; background: linear-gradient(90deg, rgb(0, 255, 255), rgb(0, 0, 205));"></div>
+            </div>
+
+            <div id="game-info" class="flex justify-between w-full mt-2 text-sm opacity-80 px-2">
+                <div>Score: <span id="current-score">282</span></div>
+                <div>Level: <span id="current-level">6</span> (<span id="level-theme-name">Synth Wave</span>)</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Constants for the game
+    const CANVAS_WIDTH = 600;
+    const CANVAS_HEIGHT = 300;
+    
+    // Physics constants 
+    const GRAVITY = 0.8; 
+    const JUMP_VELOCITY = -9; 
+    const ROTATION_SPEED = 0.15; // Speed of cube rotation in radians per frame
+
+    const GROUND_HEIGHT = 30;
+    const PLAYER_SIZE = 25;
+    const BASE_SPEED = 5;
+
+    // --- Time-based Level Constants (Targeting ~60 FPS) ---
+    const START_DELAY_FRAMES = 60; // Safe period before first obstacle (approx. 1 second)
+    const LEVEL_DURATION_FRAMES = 600; // Total level length (approx. 10 seconds)
+    
+    // Random Level Generation Constraints
+    const GAP_MIN = 120; // Minimum gap between obstacles
+    const GAP_MAX = 350; // Maximum gap between obstacles
+    const BLOCK_HEIGHTS = [3, 4, 5]; // Heights of air blocks in PLAYER_SIZE units above ground
+
+    // Game state variables
+    let canvas, ctx;
+    let gameState = 'menu'; // 'menu', 'customize', 'levelSelect', 'playing', 'gameOver', 'levelComplete'
+    let player;
+    let obstacles = [];
+    let level;
+    let score = 0;
+    let highScore = 0;
+    let animationFrameId;
+
+    // Visual Feedback for Jump
+    let playerScale = 1.0;
+    const JUMP_PULSE_SCALE = 1.2;
+    const JUMP_PULSE_DECAY = 0.9; 
+
+    // DOM Elements
+    const elements = {
+        mainMenu: document.getElementById('main-menu'),
+        customizeMenu: document.getElementById('customize-menu'),
+        levelSelectMenu: document.getElementById('level-select-menu'), // New
+        levelList: document.getElementById('level-list'), // New
+        gameView: document.getElementById('game-view'),
+        playButton: document.getElementById('play-button'),
+        customizeButton: document.getElementById('customize-button'),
+        downloadButton: document.getElementById('download-button'), 
+        saveCustomizationButton: document.getElementById('save-customization-button'),
+        levelSelectBackButton: document.getElementById('level-select-back-button'), // New
+        color1Palette: document.getElementById('color1-palette'), 
+        color2Palette: document.getElementById('color2-palette'),
+        playerPreview: document.getElementById('player-preview'),
+        
+        // Game Over elements
+        gameOverMessage: document.getElementById('game-over-message'),
+        retryButtonFail: document.getElementById('retry-button-fail'),
+        menuButtonFail: document.getElementById('menu-button-fail'),
+
+        // Level Complete elements (New)
+        levelCompleteMessage: document.getElementById('level-complete-message'),
+        retryButtonComplete: document.getElementById('retry-button-complete'),
+        menuButtonComplete: document.getElementById('menu-button-complete'),
+        completeScore: document.getElementById('complete-score'),
+
+        currentScore: document.getElementById('current-score'),
+        finalScore: document.getElementById('final-score'),
+        currentLevel: document.getElementById('current-level'),
+        levelThemeName: document.getElementById('level-theme-name'),
+        progressBar: document.getElementById('progress-bar'),
+        highScore: document.getElementById('high-score'),
+    };
+
+    // --- Predefined Level Data ---
+
+    // Pre-defined neon color palette for customization (Player colors)
+    const neonColors = [
+        '#FF00FF', '#00FFFF', '#FFFF00', '#FF0000', '#00FF00', '#0000FF',
+        '#FF69B4', '#ADFF2F', '#8A2BE2', '#00CED1', '#FFD700', '#3CB371',
+        '#FFA500', '#FF4500', '#DA70D6', '#BA55D3', '#7FFFD4', '#6A5ACD'
+    ];
+    
+    // Six fixed, cycling level themes
+    const PREDEFINED_LEVEL_THEMES = [
+        { id: 1, name: "Sunset Drift", c1: '#FF8C00', c2: '#FF4500', envColor: '#1A0000' }, 
+        { id: 2, name: "Teal Peace", c1: '#00CED1', c2: '#7FFFD4', envColor: '#001A1A' }, 
+        { id: 3, name: "Vaporwave Dream", c1: '#FF00FF', c2: '#00FFFF', envColor: '#100A1A' }, 
+        { id: 4, name: "Future Line", c1: '#8A2BE2', c2: '#00BFFF', envColor: '#0A001A' }, 
+        { id: 5, name: "Berry Circuit", c1: '#FFA500', c2: '#FF1493', envColor: '#1A0510' }, 
+        { id: 6, name: "Synth Wave", c1: '#00FFFF', c2: '#0000CD', envColor: '#00001A' }, 
+    ];
+
+    // --- Player Class (retained) ---
+    class Player {
+        constructor(x, y, size, colors) {
+            this.x = x;
+            this.y = y;
+            this.size = size;
+            this.yVel = 0;
+            this.isJumping = false; 
+            this.colors = colors;
+            this.rotation = 0; 
+            this.isMoving = true; 
+        }
+
+        update() {
+            const groundY = CANVAS_HEIGHT - GROUND_HEIGHT - this.size;
+            
+            // Only apply gravity/movement if game state is playing
+            if (gameState === 'playing') {
+                this.yVel += GRAVITY; 
+                this.y += this.yVel;
+
+                if (this.y >= groundY) {
+                    this.yVel = 0;
+                    this.y = groundY; 
+                    this.isJumping = false; 
+                    this.rotation = 0;
+                } else {
+                    this.rotation += ROTATION_SPEED;
+                    if (this.rotation > Math.PI * 2) {
+                        this.rotation -= Math.PI * 2;
+                    }
+                }
+            } else if (gameState === 'levelComplete' && this.y < groundY) {
+                 // Even if completed, gravity still pulls player to ground if they finished mid-air
+                this.yVel += GRAVITY; 
+                this.y += this.yVel;
+                if (this.y >= groundY) {
+                    this.yVel = 0;
+                    this.y = groundY;
+                }
+            }
+
+            playerScale = playerScale > 1.0 ? Math.max(1.0, playerScale * JUMP_PULSE_DECAY) : 1.0;
+        }
+
+        jump() {
+            if (!this.isJumping && gameState === 'playing') { 
+                this.yVel = JUMP_VELOCITY; 
+                this.isJumping = true;
+                playerScale = JUMP_PULSE_SCALE; 
+            }
+        }
+
+        draw(ctx) {
+            ctx.save();
+            const currentSize = this.size * playerScale;
+            const centerX = this.x + this.size / 2;
+            const centerY = this.y + this.size / 2; 
+
+            ctx.translate(centerX, centerY);
+            ctx.rotate(this.rotation);
+
+            const drawX = -currentSize / 2; 
+            const drawY = -currentSize / 2; 
+            
+            const gradient = ctx.createLinearGradient(drawX, drawY, drawX + currentSize, drawY + currentSize);
+            gradient.addColorStop(0, this.colors.c1);
+            gradient.addColorStop(1, this.colors.c2);
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(drawX, drawY, currentSize, currentSize);
+
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(drawX, drawY, currentSize, currentSize);
+
+            ctx.shadowColor = this.colors.c2;
+            ctx.shadowBlur = 10;
+            ctx.strokeRect(drawX, drawY, currentSize, currentSize);
+            ctx.shadowBlur = 0;
+
+            ctx.restore();
+        }
+    }
+
+    // --- Obstacle Class (retained) ---
+    class Obstacle {
+        constructor(x, y, width, height, type = 'spike') {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.type = type; 
+        }
+
+        update(speed) {
+            // Updated: Move if the game is 'playing' OR if the level is 'levelComplete' (for visual cleanup)
+            if (gameState === 'playing' || gameState === 'levelComplete') { 
+                this.x -= speed;
+            }
+        }
+
+        draw(ctx, theme) {
+            ctx.fillStyle = theme.c1;
+            ctx.shadowColor = theme.c2;
+            ctx.shadowBlur = 15;
+
+            if (this.type === 'spike') {
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y + this.height);         
+                ctx.lineTo(this.x + this.width / 2, this.y);     
+                ctx.lineTo(this.x + this.width, this.y + this.height);
+                ctx.closePath();
+                ctx.fill();
+            } else {
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+            }
+            ctx.shadowBlur = 0;
+        }
+    }
+
+    // --- Level Class (retained) ---
+    class Level {
+        constructor(number) {
+            this.number = number;
+            
+            // Look up the theme by the provided level number (id)
+            const levelTheme = PREDEFINED_LEVEL_THEMES.find(t => t.id === number);
+            this.theme = levelTheme || PREDEFINED_LEVEL_THEMES[0]; // Default to Level 1 if not found
+
+            this.progress = 0;
+            this.speed = BASE_SPEED * (1 + (this.number - 1) * 0.05); // Speed scaled by level number
+            this.length = LEVEL_DURATION_FRAMES * this.speed; 
+            this.consecutiveGroundObstacles = 0; 
+            this.nextObstacleDistance = START_DELAY_FRAMES * this.speed; 
+        }
+
+        generateObstacle() {
+            let type;
+            const rand = Math.random();
+            
+            if (this.consecutiveGroundObstacles >= 3 && rand < 0.7) {
+                 type = 'airBlock';
+            } else if (rand < 0.20) {
+                type = 'airBlock';
+            } else if (rand < 0.50) { 
+                type = 'tripleSpike'; 
+            } else if (rand < 0.85) { 
+                type = 'spike'; 
+            } else { 
+                type = 'doubleSpike';
+            }
+
+            let newObstacles = [];
+            const startX = CANVAS_WIDTH;
+            let currentX = startX;
+            let lastObstacleWidth = 0;
+            
+            if (type === 'airBlock') { 
+                this.consecutiveGroundObstacles = 0;
+            } else { 
+                this.consecutiveGroundObstacles++;
+            }
+
+            if (type === 'spike' || type === 'doubleSpike' || type === 'tripleSpike') {
+                const count = type === 'spike' ? 1 : (type === 'doubleSpike' ? 2 : 3);
+                const spikeWidth = PLAYER_SIZE;
+                const spikeHeight = PLAYER_SIZE;
+
+                for (let i = 0; i < count; i++) {
+                    newObstacles.push(new Obstacle(
+                        currentX, 
+                        CANVAS_HEIGHT - GROUND_HEIGHT - spikeHeight, 
+                        spikeWidth, 
+                        spikeHeight, 
+                        'spike'
+                    ));
+                    currentX += spikeWidth;
+                }
+                lastObstacleWidth = spikeWidth * count;
+            } else if (type === 'airBlock') {
+                const blockWidth = PLAYER_SIZE * 2;
+                const blockHeight = PLAYER_SIZE;
+                
+                const randHeightIndex = Math.floor(Math.random() * BLOCK_HEIGHTS.length);
+                const heightMultiplier = BLOCK_HEIGHTS[randHeightIndex];
+                
+                const airHeight = PLAYER_SIZE * heightMultiplier; 
+                const blockY = CANVAS_HEIGHT - GROUND_HEIGHT - blockHeight - airHeight;
+                
+                newObstacles.push(new Obstacle(
+                    startX, 
+                    blockY, 
+                    blockWidth, 
+                    blockHeight, 
+                    'block'
+                ));
+                lastObstacleWidth = blockWidth;
+            }
+
+            obstacles.push(...newObstacles);
+
+            const effectiveMinGap = GAP_MIN;
+            const effectiveMaxGap = Math.max(effectiveMinGap, GAP_MAX / (this.speed / BASE_SPEED));
+            const gapRange = effectiveMaxGap - effectiveMinGap; 
+            
+            this.nextObstacleDistance = effectiveMinGap + Math.random() * gapRange;
+        }
+    }
+    
+    // --- Input Handler (retained) ---
+
+    function handleJumpInput(e) {
+        if (gameState === 'playing') {
+            if (e.type === 'keydown' || e.type === 'touchstart' || e.type === 'click') {
+                e.preventDefault();
+            }
+            player.jump();
+        }
+    }
+
+    // --- Customization Functions (retained) ---
+
+    /**
+     * Creates and populates the color selection palette swatches.
+     */
+    function createColorPalette(paletteElement, isColor1) {
+        paletteElement.innerHTML = '';
+        neonColors.forEach(color => {
+            const swatch = document.createElement('div');
+            swatch.className = 'color-swatch';
+            swatch.style.backgroundColor = color;
+            swatch.dataset.color = color;
+            swatch.addEventListener('click', () => handleColorSelection(color, isColor1));
+            paletteElement.appendChild(swatch);
+        });
+    }
+
+    /**
+     * Handles the selection of a color swatch for customization.
+     */
+    function handleColorSelection(color, isColor1) {
+        if (isColor1) {
+            player.colors.c1 = color;
+        } else {
+            player.colors.c2 = color;
+        }
+        updateColorPreview();
+    }
+    
+    // --- Persistence Functions (Refactored for clarity) ---
+
+    /**
+     * Loads the high score from local storage.
+     * @returns {number} The high score, defaults to 0.
+     */
+    function loadHighScore() {
+        const scoreString = localStorage.getItem('neonDashHighScore');
+        const loadedScore = parseFloat(scoreString);
+        return isNaN(loadedScore) ? 0 : loadedScore;
+    }
+
+    /**
+     * Saves the new high score to local storage.
+     * @param {number} newScore - The score to save.
+     */
+    function saveHighScore(newScore) {
+        // Save the rounded integer value
+        localStorage.setItem('neonDashHighScore', Math.round(newScore).toString());
+    }
+    
+    // --- Core Functions ---
+
+    function downloadGameFile() {
+        // ... (retained) ...
+        const htmlContent = document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'neon_dash.html'; 
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function initGame() {
+        canvas = document.getElementById('game-canvas');
+        ctx = canvas.getContext('2d');
+        canvas.width = CANVAS_WIDTH;
+        canvas.height = CANVAS_HEIGHT;
+
+        const savedColors = JSON.parse(localStorage.getItem('neonDashColors')) || { c1: '#ff4500', c2: '#ffd700' };
+        player = new Player(50, CANVAS_HEIGHT - GROUND_HEIGHT - PLAYER_SIZE, PLAYER_SIZE, savedColors);
+        
+        // Load high score using the new function
+        highScore = loadHighScore();
+
+        // Setup Event Listeners
+        elements.playButton.addEventListener('click', () => changeState('levelSelect')); 
+        elements.customizeButton.addEventListener('click', () => changeState('customize'));
+        elements.downloadButton.addEventListener('click', downloadGameFile); 
+        elements.saveCustomizationButton.addEventListener('click', saveCustomization);
+        elements.levelSelectBackButton.addEventListener('click', () => changeState('menu')); 
+
+        // Game Over/Complete button handlers
+        elements.retryButtonFail.addEventListener('click', () => changeState('playing', level.number));
+        elements.menuButtonFail.addEventListener('click', () => changeState('menu'));
+        elements.retryButtonComplete.addEventListener('click', () => changeState('playing', level.number));
+        elements.menuButtonComplete.addEventListener('click', () => changeState('menu'));
+
+        // JUMP INPUT LISTENERS
+        canvas.addEventListener('click', handleJumpInput);
+        canvas.addEventListener('touchstart', handleJumpInput);
+        window.addEventListener('keydown', (e) => {
+            if (e.key === ' ' || e.key === 'Spacebar') {
+                handleJumpInput(e);
+            }
+        });
+
+        // Initialize custom color palettes
+        createColorPalette(elements.color1Palette, true);
+        createColorPalette(elements.color2Palette, false);
+        
+        // Generate Level Selection Cards
+        generateLevelCards();
+
+        updateColorPreview(); 
+        changeState('menu');
+    }
+    
+    // --- Level Selection Logic (retained) ---
+
+    function generateLevelCards() {
+        elements.levelList.innerHTML = ''; 
+        PREDEFINED_LEVEL_THEMES.forEach(theme => {
+            const card = document.createElement('div');
+            card.className = 'level-card';
+            card.dataset.levelId = theme.id;
+            
+            const name = document.createElement('div');
+            name.className = 'level-card-name';
+            name.textContent = `Level ${theme.id}: ${theme.name}`;
+
+            const detail = document.createElement('div');
+            detail.textContent = `Colors: ${theme.c1} / ${theme.c2}`;
+            detail.className = 'text-xs opacity-70';
+            
+            card.appendChild(name);
+            card.appendChild(detail);
+            
+            // Hover effect to show level gradient
+            card.addEventListener('mouseenter', () => {
+                document.documentElement.style.setProperty('--level-hover-c1', theme.c1);
+                document.documentElement.style.setProperty('--level-hover-c2', theme.c2);
+            });
+            card.addEventListener('mouseleave', () => {
+                // Reset to default on mouse leave
+                document.documentElement.style.setProperty('--level-hover-c1', 'var(--neon-color-main)');
+                document.documentElement.style.setProperty('--level-hover-c2', 'var(--neon-color-accent)');
+            });
+
+            // Click handler to start the game
+            card.addEventListener('click', () => {
+                changeState('playing', theme.id);
+            });
+
+            elements.levelList.appendChild(card);
+        });
+    }
+
+    // --- State Management ---
+
+    function changeState(newState, levelId = 1) {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+
+        // Hide all screens
+        elements.mainMenu.classList.add('hidden');
+        elements.customizeMenu.classList.add('hidden');
+        elements.levelSelectMenu.classList.add('hidden');
+        elements.gameView.classList.add('hidden');
+        elements.gameOverMessage.classList.add('hidden');
+        elements.levelCompleteMessage.classList.add('hidden'); 
+
+        gameState = newState;
+        
+        // Stop all movement visually if not playing
+        if (player) {
+            player.isMoving = (newState === 'playing' || newState === 'levelComplete');
+        }
+
+        switch (newState) {
+            case 'menu':
+                // Ensure high score is re-loaded and displayed every time we return to the menu
+                highScore = loadHighScore(); 
+                elements.highScore.textContent = highScore.toFixed(0);
+                elements.mainMenu.classList.remove('hidden');
+                break;
+            case 'levelSelect': 
+                elements.levelSelectMenu.classList.remove('hidden');
+                break;
+            case 'customize':
+                elements.customizeMenu.classList.remove('hidden');
+                break;
+            case 'playing':
+                resetGame(levelId); 
+                elements.gameView.classList.remove('hidden');
+                elements.progressBar.classList.remove('completed');
+                canvas.focus(); 
+                gameLoop();
+                break;
+            case 'gameOver':
+                // Check and save high score using the new function
+                const currentScoreRoundedFail = Math.round(score);
+                if (currentScoreRoundedFail > highScore) {
+                    highScore = currentScoreRoundedFail;
+                    saveHighScore(highScore);
+                }
+                elements.finalScore.textContent = currentScoreRoundedFail.toFixed(0);
+                elements.gameOverMessage.classList.remove('hidden');
+                elements.gameView.classList.remove('hidden'); 
+                break;
+            case 'levelComplete': 
+                // --- FIX APPLIED HERE: Check and save high score upon successful completion ---
+                const currentScoreRoundedComplete = Math.round(score);
+                if (currentScoreRoundedComplete > highScore) {
+                    highScore = currentScoreRoundedComplete;
+                    saveHighScore(highScore);
+                }
+                // -----------------------------------------------------------------------------
+
+                // Player stops moving forward
+                elements.completeScore.textContent = Math.round(score).toFixed(0);
+                elements.levelCompleteMessage.classList.remove('hidden');
+                elements.gameView.classList.remove('hidden'); 
+                elements.progressBar.classList.add('completed');
+                break;
+        }
+    }
+
+    function saveCustomization() {
+        localStorage.setItem('neonDashColors', JSON.stringify(player.colors));
+        changeState('menu');
+    }
+
+    function updateColorPreview() {
+        const c1 = player.colors.c1;
+        const c2 = player.colors.c2;
+        elements.playerPreview.style.background = `linear-gradient(45deg, ${c1}, ${c2})`;
+        
+        document.documentElement.style.setProperty('--player-color-1', c1);
+        document.documentElement.style.setProperty('--player-color-2', c2);
+        
+        document.getElementById('menu-icon').style.borderColor = c2;
+        document.getElementById('menu-icon').style.boxShadow = `0 0 15px ${c2}, inset 0 0 10px ${c1}`;
+    }
+
+    function resetGame(levelNumber) {
+        // Start the requested level
+        level = new Level(levelNumber); 
+        obstacles = [];
+        score = 0;
+        
+        player.x = 50;
+        player.y = CANVAS_HEIGHT - GROUND_HEIGHT - PLAYER_SIZE;
+        player.yVel = 0;
+        player.isJumping = false;
+        playerScale = 1.0; 
+        player.rotation = 0;
+
+        elements.currentLevel.textContent = level.number;
+        elements.levelThemeName.textContent = level.theme.name;
+        elements.progressBar.style.width = '0%';
+        elements.progressBar.style.background = `linear-gradient(90deg, ${level.theme.c1}, ${level.theme.c2})`;
+    }
+
+    function checkCollision(player, obstacle) {
+        const isOverlapping = player.x < obstacle.x + obstacle.width &&
+                            player.x + player.size > obstacle.x &&
+                            player.y + player.size > obstacle.y &&
+                            player.y < obstacle.y + obstacle.height;
+
+        if (!isOverlapping) return false;
+
+        if (obstacle.type === 'spike') {
+            const px = player.x;
+            const py = player.y;
+            const ps = player.size;
+            
+            const T1 = { x: obstacle.x + obstacle.width / 2, y: obstacle.y };
+            const T2 = { x: obstacle.x, y: obstacle.y + obstacle.height };
+            const T3 = { x: obstacle.x + obstacle.width, y: obstacle.y + obstacle.height };
+            
+            const corners = [
+                { x: px + ps * 0.1, y: py + ps * 0.9 },     
+                { x: px + ps * 0.9, y: py + ps * 0.9 },     
+                { x: px + ps * 0.5, y: py + ps * 0.9 },     
+            ];
+
+            function sign(p1, p2, p3) {
+                return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
+            }
+
+            function pointInTriangle(pt, v1, v2, v3) {
+                const d1 = sign(pt, v1, v2);
+                const d2 = sign(pt, v2, v3);
+                const d3 = sign(pt, v3, v1);
+                
+                const has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
+                const has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
+                
+                return !(has_neg && has_pos); 
+            }
+            
+            for (let i = 0; i < corners.length; i++) {
+                if (pointInTriangle(corners[i], T1, T2, T3)) {
+                    return true;
+                }
+            }
+            return false;
+
+        } else {
+            return isOverlapping;
+        }
+    }
+
+    // --- Game Loop ---
+
+    function gameLoop() {
+        if (gameState !== 'playing' && gameState !== 'levelComplete') return;
+
+        // 1. Update
+        player.update();
+        
+        // Define the progress point where obstacle generation stops (Cleanup Zone)
+        const CLEANUP_THRESHOLD = level.length * 0.95; 
+
+        if (gameState === 'playing') {
+            score += 0.1 * level.number; 
+            level.progress += level.speed;
+        }
+
+        // Check for LEVEL END / TRANSITION
+        if (gameState === 'playing' && level.progress >= level.length) {
+            // Lock progress at 100% and transition state
+            level.progress = level.length; 
+            changeState('levelComplete');
+            // Continue to draw/cleanup obstacles until they are gone
+        }
+
+        if (gameState === 'playing') {
+             // Obstacle generation (only if playing AND before cleanup threshold)
+            if (level.progress < CLEANUP_THRESHOLD) {
+                if (level.nextObstacleDistance <= 0) {
+                    level.generateObstacle();
+                }
+                level.nextObstacleDistance -= level.speed;
+            }
+        }
+
+        // Update and check collisions for obstacles
+        for (let i = obstacles.length - 1; i >= 0; i--) {
+            // Obstacle moves off-screen regardless of playing or levelComplete state
+            obstacles[i].update(level.speed); 
+
+            if (gameState === 'playing' && checkCollision(player, obstacles[i])) {
+                changeState('gameOver');
+                return;
+            }
+
+            // Remove off-screen obstacles (clean up)
+            if (obstacles[i].x + obstacles[i].width < 0) {
+                obstacles.splice(i, 1);
+            }
+        }
+
+        // 3. Draw
+        draw();
+
+        // 4. Update UI
+        elements.currentScore.textContent = Math.round(score).toFixed(0); // Round for display
+        
+        const progressPercent = (level.progress / level.length) * 100;
+        elements.progressBar.style.width = `${progressPercent}%`;
+
+        animationFrameId = requestAnimationFrame(gameLoop);
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        
+        // Background Gradient
+        const bgGradient = ctx.createLinearGradient(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        bgGradient.addColorStop(0, level.theme.envColor);
+        bgGradient.addColorStop(1, '#000000');
+        ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+
+        // Draw Ground
+        const groundGradient = ctx.createLinearGradient(0, CANVAS_HEIGHT - GROUND_HEIGHT, 0, CANVAS_HEIGHT);
+        groundGradient.addColorStop(0, level.theme.c2);
+        groundGradient.addColorStop(1, level.theme.c1);
+
+        ctx.fillStyle = groundGradient;
+        ctx.fillRect(0, CANVAS_HEIGHT - GROUND_HEIGHT, CANVAS_WIDTH, GROUND_HEIGHT);
+
+        // Ground Neon line
+        ctx.shadowColor = level.theme.c2;
+        ctx.shadowBlur = 15;
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(0, CANVAS_HEIGHT - GROUND_HEIGHT);
+        ctx.lineTo(CANVAS_WIDTH, CANVAS_HEIGHT - GROUND_HEIGHT);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+
+        // Draw Obstacles
+        obstacles.forEach(obstacle => {
+            obstacle.draw(ctx, level.theme);
+        });
+
+        // Draw Player
+        player.draw(ctx);
+    }
+
+    // Initialize the game when the window loads
+    window.onload = initGame;
+</script>
+
+
+</body></html>
